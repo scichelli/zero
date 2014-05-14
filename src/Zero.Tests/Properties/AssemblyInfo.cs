@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyCopyright("Copyright © 2014 Patrick Lioi")]
 [assembly: AssemblyVersion("0.0.0.0")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyFileVersion("0.0.0.0")]

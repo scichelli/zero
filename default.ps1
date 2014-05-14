@@ -57,6 +57,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyCopyright(""Copyright © $copyrightSpan $maintainers"")]
 [assembly: AssemblyVersion(""$version"")]
+[assembly: AssemblyDescription(""$description"")]
 [assembly: AssemblyFileVersion(""$version"")]" | out-file "$($project.DirectoryName)\Properties\AssemblyInfo.cs" -encoding "UTF8"
     }
 }
