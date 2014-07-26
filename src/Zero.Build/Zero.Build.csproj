@@ -4,15 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CD0E0C98-45F1-49BC-AD18-79443A5FBD56}</ProjectGuid>
+    <ProjectGuid>{5A25C04E-B97D-4B7E-A07F-172E83C5CD30}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Zero.Tests</RootNamespace>
-    <AssemblyName>Zero.Tests</AssemblyName>
+    <RootNamespace>Zero.Build</RootNamespace>
+    <AssemblyName>Zero.Build</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,24 +30,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Fixie">
-      <HintPath>..\packages\Fixie.0.0.1.162\lib\net45\Fixie.dll</HintPath>
-    </Reference>
-    <Reference Include="Should">
-      <HintPath>..\packages\Should.1.1.20\lib\Should.dll</HintPath>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Nautilus.Framework">
+      <HintPath>..\lib\Nautilus.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExampleClass.cs" />
+    <Compile Include="BuildInstructions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Zero.Tests\Zero.Tests.csproj">
+      <Project>{CD0E0C98-45F1-49BC-AD18-79443A5FBD56}</Project>
+      <Name>Zero.Tests</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
