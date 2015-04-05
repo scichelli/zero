@@ -2,9 +2,8 @@
 {
     using System;
     using System.IO;
-    using Nautilus.Framework;
 
-    public class BuildInstructions : TaskRunner
+    public class BuildInstructions : Nautilus.Framework.BuildInstructions
     {
         private const string PathToSolution = @".\src\Zero.sln";
         private const string OutputPath = @".\Output";
