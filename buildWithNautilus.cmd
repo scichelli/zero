@@ -1,1 +1,1 @@
-.\src\lib\nautilus.exe --script ".\src\Zero.Build\BuildInstructions.cs" --call Default
+.\src\lib\nautilus.exe --instructions ".\src\Zero.Build\BuildInstructions.cs" --call Default
